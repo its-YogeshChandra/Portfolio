@@ -5,7 +5,7 @@ import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import { Badge } from "./ui/badge";
 import image from "../../public/venti-views-7wL-HlNfi4Y-unsplash.jpg"
 import github from "../../public/github.png"
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -18,7 +18,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ index, isFocused, isBlurred, onMouseEnter, onMouseLeave }: ProjectCardProps) => {
 
-    const variants = {
+    const variants: Variants = {
         hidden: { opacity: 0, y: 30 },
         show: {
             opacity: 1,
