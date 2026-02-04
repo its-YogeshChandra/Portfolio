@@ -16,6 +16,28 @@ import Image from "next/image";
 export const HeroSection = () => {
 
     //have to provide links to the buttons 
+    const socialLinks = [
+        {
+            name: "GitHub",
+            icon: github,
+            url: "https://github.com/its-YogeshChandra?tab=overview&from=2026-02-01&to=2026-02-05"
+        },
+        {
+            name: "LinkedIn",
+            icon: linkedin,
+            url: "https://linkedin.com/in/yourusername"
+        },
+        {
+            name: "Mail",
+            icon: mail,
+            url: "mailto:ychandraalways4u@gmail.com"
+        },
+        {
+            name: "Twitter",
+            icon: twitter,
+            url: "https://x.com/Lg__Crusty"
+        }
+    ]
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,30 +67,14 @@ export const HeroSection = () => {
                         <p className="text-[18px] text-gray-400">Uttarakhand, India</p>
                     </div>
                     <div className="mt-4 w-full h-auto flex flex-wrap gap-4 items-center ">
-                        <button>
-                            <Badge className=" px-3 py-2 flex bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" >
-                                <Image src={github} alt="github" className="w-4 h-4 dark:invert" />
-                                <p className="text-sm ml-2">GitHub</p>
-                            </Badge>
-                        </button>
-                        <button>
-                            <Badge className=" px-3 py-2 flex bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                                <Image src={linkedin} alt="linkedin" className="w-4 h-4" />
-                                <p className="text-sm ml-2">Linkedin</p>
-                            </Badge>
-                        </button>
-                        <button>
-                            <Badge className=" px-3 py-2 flex bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                                <Image src={mail} alt="mail" className="w-4 h-4" />
-                                <p className="text-sm ml-2">Mail</p>
-                            </Badge>
-                        </button>
-                        <button>
-                            <Badge className=" px-3 py-2 flex bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                                <Image src={twitter} alt="twitter" className="w-4 h-4" />
-                                <p className="text-sm ml-2">Twitter</p>
-                            </Badge>
-                        </button>
+                        {socialLinks.map((link) => (
+                            <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer">
+                                <Badge className=" px-3 py-2 flex bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                                    <Image src={link.icon} alt={link.name.toLowerCase()} className={`w-4 h-4 ${link.name === 'GitHub' ? 'dark:invert' : ''}`} />
+                                    <p className="text-sm ml-2">{link.name}</p>
+                                </Badge>
+                            </a>
+                        ))}
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 min-h-100 flex justify-center md:justify-start md:pl-5 mt-5 md:mt-0">
