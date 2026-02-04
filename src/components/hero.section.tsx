@@ -6,6 +6,7 @@ import github from "../../public/github.png"
 import linkedin from "../../public/linkedin.png"
 import mail from "../../public/email.png"
 import profile from "../../public/wellington-ferreira-72TE8cWKXRY-unsplash.jpg"
+import location from "../../public/pin.png"
 
 import Image from "next/image";
 
@@ -30,6 +31,10 @@ export const HeroSection = () => {
                     </div>
                     <div className="w-full h-20 border-l-4 border-black mt-4 px-2">
                         <p className="text-[18px]">Full-stack developer with a strong interest in blockchain and Rust. I enjoy building scalable systems, clean APIs, and reliable backends with modern web technologies</p>
+                    </div>
+                    <div className="w-full h-10 flex gap-x-2 items-center mt-4">
+                        <Image src={location} alt="location" className="w-4 h-4" />
+                        <p className="text-[18px] text-gray-400">Uttarakhand, India</p>
                     </div>
                     <div className="mt-4 w-full h-20 flex gap-x-6 items-center ">
                        <button>
