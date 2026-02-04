@@ -3,8 +3,8 @@ import { Container } from "@/components/container";
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero.section";
 import { Projects } from "@/components/projects";
-import {Skills} from "@/components/skills";
-
+import { Skills } from "@/components/skills";
+import { GithubActivity } from "@/components/github-activity";
 export default function Home() {
   return (
     <div>
@@ -12,8 +12,9 @@ export default function Home() {
       <Container>
         <HeroSection />
         <Skills />
-        <Projects />
       </Container>
+      <Projects />
+      <GithubActivity />
     </div>
   )
 }
