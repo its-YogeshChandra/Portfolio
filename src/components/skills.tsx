@@ -39,11 +39,12 @@ export const Skills = () => {
     ]
     return (
         <motion.div
+            id="skills"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="w-full h-max flex flex-col gap-y-4"
+            className="w-full h-max flex flex-col gap-y-4 scroll-mt-28"
         >
             <div className="w-max h-max flex gap-x-3 items-center">
                 <div className="w-20 h-[3px] bg-linear-to-r from-gray-600 to-gray-200 dark:from-gray-400 dark:to-gray-800"></div>

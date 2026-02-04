@@ -41,10 +41,11 @@ export const HeroSection = () => {
     ]
     return (
         <motion.div
+            id="about"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full h-max mt-10 flex flex-col gap-y-5"
+            className="w-full h-max pt-28 flex flex-col gap-y-5 scroll-mt-28"
         >
             <Badge className="w-max px-6 py-2 text-black dark:text-white bg-gray-100 dark:bg-gray-800 flex gap-x-3 ">
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -67,7 +68,7 @@ export const HeroSection = () => {
                         <Image src={location} alt="location" className="w-4 h-4 dark:invert" />
                         <p className="text-[18px] text-gray-400">Uttarakhand, India</p>
                     </div>
-                    <div className="mt-4 w-full h-auto flex flex-wrap gap-4 items-center ">
+                    <div id="connect" className="mt-4 w-full h-auto flex flex-wrap gap-4 items-center scroll-mt-28">
                         {socialLinks.map((link) => (
                             <a href={link.url} key={link.name} target="_blank" rel="noopener noreferrer">
                                 <Badge className=" px-3 py-2 flex bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">

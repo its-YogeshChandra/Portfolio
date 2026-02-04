@@ -10,11 +10,12 @@ export const Projects = () => {
 
     return (
         <motion.div
+            id="projects"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="w-full h-auto mt-16 flex flex-col gap-y-10 px-6 md:px-20 mb-10"
+            className="w-full h-auto mt-16 flex flex-col gap-y-10 px-6 md:px-20 mb-10 scroll-mt-28"
         >
             <div className="w-max h-max flex gap-x-3 items-center">
                 <div className="w-20 h-[3px] bg-linear-to-r from-gray-600 to-gray-200 dark:from-gray-400 dark:to-gray-800"></div>
