@@ -1,4 +1,7 @@
 import { StaticImageData } from "next/image";
+import project1_image from "../../public/mainpage_courseselling.png"
+import project2_image from "../../public/mainpage_streamweaver.png"
+import project3_image from "../../public/mainpage_faultnote.png"
 
 export interface ProjectData {
     id: number;
@@ -31,43 +34,43 @@ export interface ProjectData {
 export const projectsData: ProjectData[] = [
     {
         id: 1,
-        title: "E-Commerce Platform",
-        description: "A full-stack e-commerce solution with real-time inventory management, secure payments, and an intuitive admin dashboard.",
+        title: "LearnVerge",
+        description: "A courseselling app with crm, custom auth ",
         category: "WEB DEV",
-        image: "/projects/project-1.png",
-        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/username/project-1",
+        image: project1_image,
+        technologies: ["Vite.js", "JavaScript", "express.js", "mongodb","react-hook-form"],
+        liveUrl: "https://course-sellling-appfrontend.vercel.app/",
+        githubUrl: "https://github.com/its-YogeshChandra/CourseSelllingApp.git",
     },
     {
         id: 2,
-        title: "AI Chat Application",
-        description: "An intelligent chatbot powered by OpenAI with context-aware responses, message history, and multi-language support.",
-        category: "AI / ML",
-        image: "/projects/project-2.png",
-        technologies: ["React", "OpenAI", "Node.js", "MongoDB"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/username/project-2",
+        title: "StreamWeaver",
+        description: "A video to hls converter,with multi-resolution, variety of codecs and custom hls size",
+        category: "WEB DEV",
+        image: project2_image,
+        technologies: ["Next.js", "typescript",  "rust ","ffmpeg", "yt-dlp","nginx"],
+        liveUrl: "https://stream-weaver-ruby.vercel.app/",
+        githubUrl: "https://github.com/its-YogeshChandra/StreamWeaver.git",
     },
     {
         id: 3,
-        title: "DeFi Dashboard",
-        description: "A comprehensive decentralized finance dashboard for tracking crypto portfolios, swaps, and staking rewards in real-time.",
-        category: "BLOCKCHAIN",
-        image: "/projects/project-3.png",
-        technologies: ["Solana", "Rust", "React", "Web3.js"],
+        title: "FaultNote",
+        description: "A tui application for learning from mistakes",
+        category: "TUI",
+        image: project3_image,
+        technologies: [ "Rust", "Ratatui", "toki", "reqwest"],
         liveUrl: "https://example.com",
-        githubUrl: "https://github.com/username/project-3",
+        githubUrl: "https://github.com/its-YogeshChandra/FaultNote.git",
     },
     {
         id: 4,
-        title: "Task Management App",
-        description: "A collaborative task manager with real-time sync, team workspaces, Kanban boards, and smart deadline reminders.",
-        category: "WEB DEV",
+        title: "Amm contract",
+        description: "A amm contract with cpmm concept, with add liquidity, remove liquidity, swap, ",
+        category: "Blockchain",
         image: "/projects/project-4.png",
-        technologies: ["Vue.js", "Firebase", "Tailwind"],
+        technologies: ["anchor", "solana", "rust"],
         liveUrl: "https://example.com",
-        githubUrl: "https://github.com/username/project-4",
+        githubUrl: "https://github.com/its-YogeshChandra/Spool_Amm.git",
     },
     {
         id: 5,
