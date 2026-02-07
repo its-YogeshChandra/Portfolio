@@ -56,7 +56,7 @@ export const HeroSection = () => {
                 <p className="text-3xl font-bold text-gray-900 dark:text-white"> ABOUT/PROFILE</p>
             </div>
             <div className="w-full min-h-100 flex flex-col-reverse md:flex-row gap-x-2 ">
-                <div className="w-full md:w-2/3 min-h-100 flex flex-col mt-10 md:mt-15">
+                <div className="w-full md:w-2/3 min-h-100 flex flex-col mt-3 md:mt-15">
                     <div>
                         <p className="text-4xl font-extrabold text-gray-900 dark:text-white">Full Stack </p>
                         <p className="text-4xl font-extrabold text-gray-900 dark:text-white">Developer</p>
