@@ -4,14 +4,14 @@ import project2_image from "../../public/mainpage_streamweaver.png"
 import project3_image from "../../public/mainpage_faultnote.png"
 
 export interface ProjectData {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    image: string | StaticImageData;
-    technologies: string[];
-    liveUrl?: string;
-    githubUrl?: string;
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  image: string | StaticImageData;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 /**
@@ -32,63 +32,45 @@ export interface ProjectData {
  */
 
 export const projectsData: ProjectData[] = [
-    {
-        id: 1,
-        title: "LearnVerge",
-        description: "A courseselling app with crm, custom auth ",
-        category: "WEB DEV",
-        image: project1_image,
-        technologies: ["Vite.js", "JavaScript", "express.js", "mongodb","react-hook-form"],
-        liveUrl: "https://course-sellling-appfrontend.vercel.app/",
-        githubUrl: "https://github.com/its-YogeshChandra/CourseSelllingApp.git",
-    },
-    {
-        id: 2,
-        title: "StreamWeaver",
-        description: "A video to hls converter,with multi-resolution, variety of codecs and custom hls size",
-        category: "WEB DEV",
-        image: project2_image,
-        technologies: ["Next.js",  "rust ","ffmpeg","nginx"],
-        liveUrl: "https://stream-weaver-ruby.vercel.app/",
-        githubUrl: "https://github.com/its-YogeshChandra/StreamWeaver.git",
-    },
-    {
-        id: 3,
-        title: "FaultNote",
-        description: "A tui application for learning from mistakes",
-        category: "TUI",
-        image: project3_image,
-        technologies: [ "Rust", "Ratatui", "tokio", "reqwest"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/its-YogeshChandra/FaultNote.git",
-    },
-    {
-        id: 4,
-        title: "Amm contract",
-        description: "A amm contract with cpmm concept, with add liquidity, remove liquidity, swap, ",
-        category: "Blockchain",
-        image: "/projects/project-4.png",
-        technologies: ["anchor", "solana", "rust"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/its-YogeshChandra/Spool_Amm.git",
-    },
-    {
-        id: 5,
-        title: "Mobile Fitness Tracker",
-        description: "A cross-platform fitness app with workout plans, progress tracking, nutrition logging, and social challenges.",
-        category: "MOBILE APP",
-        image: "/projects/project-5.png",
-        technologies: ["React Native", "Expo", "GraphQL"],
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com/username/project-5",
-    },
-    {
-        id: 6,
-        title: "DevOps Automation Tool",
-        description: "A CI/CD pipeline automation tool with one-click deployments, container orchestration, and monitoring integrations.",
-        category: "DEVOPS",
-        image: "/projects/project-6.png",
-        technologies: ["Docker", "Kubernetes", "Go", "AWS"],
-        githubUrl: "https://github.com/username/project-6",
-    },
+  {
+    id: 1,
+    title: "LearnVerge",
+    description: "A courseselling app with crm, custom auth ",
+    category: "WEB DEV",
+    image: project1_image,
+    technologies: ["Vite.js", "JavaScript", "express.js", "mongodb", "react-hook-form"],
+    liveUrl: "https://course-sellling-appfrontend.vercel.app/",
+    githubUrl: "https://github.com/its-YogeshChandra/CourseSelllingApp.git",
+  },
+  {
+    id: 2,
+    title: "StreamWeaver",
+    description: "A video to hls converter,with multi-resolution, variety of codecs and custom hls size",
+    category: "WEB DEV",
+    image: project2_image,
+    technologies: ["Next.js", "rust ", "ffmpeg", "nginx"],
+    liveUrl: "https://stream-weaver-ruby.vercel.app/",
+    githubUrl: "https://github.com/its-YogeshChandra/StreamWeaver.git",
+  },
+  {
+    id: 3,
+    title: "FaultNote",
+    description: "A tui application for learning from mistakes",
+    category: "TUI",
+    image: project3_image,
+    technologies: ["Rust", "Ratatui", "tokio", "reqwest"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/its-YogeshChandra/FaultNote.git",
+  },
+  {
+    id: 4,
+    title: "Amm contract",
+    description: "A amm contract with cpmm concept, with add liquidity, remove liquidity, swap, ",
+    category: "Blockchain",
+    image: "/projects/project-4.png",
+    technologies: ["anchor", "solana", "rust"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/its-YogeshChandra/Spool_Amm.git",
+  },
+
 ];
