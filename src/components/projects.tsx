@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { ProjectCard } from "./project-card"
 import { motion } from "framer-motion";
+import { projectsData } from "@/lib/projects-data";
 
 export const Projects = () => {
-    const projects = [1, 2, 3, 4, 5, 6]
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
@@ -39,9 +39,10 @@ export const Projects = () => {
                 className="w-full h-auto flex flex-wrap gap-8 justify-center"
             >
                 {
-                    projects.map((project, index) => (
+                    projectsData.map((project, index) => (
                         <ProjectCard
-                            key={index}
+                            key={project.id}
+                            project={project}
                             index={index}
                             isFocused={hoveredIndex === index}
                             isBlurred={hoveredIndex !== null && hoveredIndex !== index}

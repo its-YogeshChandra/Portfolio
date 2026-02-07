@@ -3,12 +3,12 @@
 import Image, { StaticImageData } from "next/image";
 import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import { Badge } from "./ui/badge";
-import image from "../../public/venti-views-7wL-HlNfi4Y-unsplash.jpg"
-import github from "../../public/github.png"
 import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { ProjectData } from "@/lib/projects-data";
 
 interface ProjectCardProps {
+    project: ProjectData;
     index?: number;
     isFocused?: boolean;
     isBlurred?: boolean;
@@ -16,7 +16,8 @@ interface ProjectCardProps {
     onMouseLeave?: () => void;
 }
 
-export const ProjectCard = ({ index, isFocused, isBlurred, onMouseEnter, onMouseLeave }: ProjectCardProps) => {
+export const ProjectCard = ({ project, index, isFocused, isBlurred, onMouseEnter, onMouseLeave }: ProjectCardProps) => {
+    const { title, description, category, image, technologies, liveUrl, githubUrl } = project;
 
     const variants: Variants = {
         hidden: { opacity: 0, y: 30 },
@@ -44,14 +45,16 @@ export const ProjectCard = ({ index, isFocused, isBlurred, onMouseEnter, onMouse
             {/* Image Container */}
             <div className="w-full h-[55%] relative overflow-hidden bg-gray-50 dark:bg-gray-800/50">
                 <Badge className="absolute top-4 left-4 z-10 bg-white/90 dark:bg-black/80 backdrop-blur-md text-black dark:text-white border border-gray-200 dark:border-gray-700 font-medium px-3 py-1 shadow-sm rounded-full pointer-events-none">
-                    WEB DEV
+                    {category}
                 </Badge>
 
                 <div className="w-full h-full p-6 flex items-center justify-center">
                     <Image
                         src={image}
-                        alt="Project screenshot"
-                        className="object-contain w-full h-full drop-shadow-lg transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        alt={`${title} screenshot`}
+                        width={400}
+                        height={300}
+                        className="object-contain w-full h-full drop-shadow-lg transform group-hover:scale-105 transition-transform duration-700 ease-out rounded-lg"
                     />
                 </div>
             </div>
@@ -61,20 +64,27 @@ export const ProjectCard = ({ index, isFocused, isBlurred, onMouseEnter, onMouse
                 <div className="flex flex-col gap-3">
                     <div className="flex justify-between items-start">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Project Title
+                            {title}
                         </h3>
-                        {/* Prevent link click from triggering card selection if needed, or allow bubble */}
-                        <a href="#" className="text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors">
-                            <ArrowUpRight size={20} />
-                        </a>
+                        {liveUrl && (
+                            <a
+                                href={liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <ArrowUpRight size={20} />
+                            </a>
+                        )}
                     </div>
 
                     <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
-                        A modern application built to solve real-world problems. Features a robust backend and an intuitive user interface.
+                        {description}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mt-1">
-                        {["React", "Tailwind", "Next.js"].map((tech) => (
+                        {technologies.map((tech) => (
                             <span key={tech} className="text-[10px] font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-2 py-1 rounded-md">
                                 {tech}
                             </span>
@@ -84,12 +94,37 @@ export const ProjectCard = ({ index, isFocused, isBlurred, onMouseEnter, onMouse
 
                 {/* Actions */}
                 <div className="flex items-center gap-4 mt-2">
-                    <button className="flex-1 flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black py-2.5 rounded-xl font-medium text-sm hover:opacity-90 transition-opacity active:scale-95 duration-200">
-                        View Live
-                    </button>
-                    <button className="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:scale-95 duration-200 text-gray-700 dark:text-gray-300">
-                        <Github size={20} />
-                    </button>
+                    {liveUrl ? (
+                        <a
+                            href={liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black py-2.5 rounded-xl font-medium text-sm hover:opacity-90 transition-opacity active:scale-95 duration-200"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <ExternalLink size={16} />
+                            View Live
+                        </a>
+                    ) : (
+                        <span className="flex-1 flex items-center justify-center gap-2 bg-gray-400 dark:bg-gray-600 text-white dark:text-gray-300 py-2.5 rounded-xl font-medium text-sm cursor-not-allowed">
+                            No Demo
+                        </span>
+                    )}
+                    {githubUrl ? (
+                        <a
+                            href={githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors active:scale-95 duration-200 text-gray-700 dark:text-gray-300"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Github size={20} />
+                        </a>
+                    ) : (
+                        <span className="p-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed">
+                            <Github size={20} />
+                        </span>
+                    )}
                 </div>
             </div>
         </motion.div>
