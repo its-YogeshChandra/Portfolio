@@ -48,7 +48,10 @@ export const Skills = () => {
         >
             <div className="w-max h-max flex gap-x-3 items-center">
                 <div className="w-20 h-[3px] bg-linear-to-r from-gray-600 to-gray-200 dark:from-gray-400 dark:to-gray-800"></div>
-                <p className="text-3xl font-bold text-gray-900 dark:text-white"> SKILLS/TECH STACK</p>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white">
+                    <span className="md:hidden">SKILLS</span>
+                    <span className="hidden md:inline">SKILLS/TECH STACK</span>
+                </p>
             </div>
             <motion.div
                 variants={container}

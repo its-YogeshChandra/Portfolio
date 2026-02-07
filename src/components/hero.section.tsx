@@ -79,7 +79,7 @@ export const HeroSection = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-full md:w-1/2 min-h-100 flex justify-center md:justify-start md:pl-5 mt-5 md:mt-0">
+                <div className="w-full md:w-1/2 min-h-100 flex justify-center md:justify-start md:pl-5 md:mt-0">
                     <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-red-500 relative">
                         <Image src={portimage} alt="profile" className="w-full h-full rounded-full border-2 border-white object-cover" />
                     </div>
