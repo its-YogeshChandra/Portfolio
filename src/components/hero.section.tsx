@@ -55,8 +55,8 @@ export const HeroSection = () => {
                 <div className="w-20 h-[3px] bg-linear-to-r from-gray-600 to-gray-200 dark:from-gray-400 dark:to-gray-800"></div>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white"> ABOUT/PROFILE</p>
             </div>
-            <div className="w-full min-h-100 flex flex-col-reverse md:flex-row gap-x-2 ">
-                <div className="w-full md:w-2/3 min-h-100 flex flex-col mt-3 md:mt-15">
+            <div className="w-full h-auto md:min-h-100 flex flex-col-reverse md:flex-row gap-x-2 ">
+                <div className="w-full md:w-2/3 h-auto md:min-h-100 flex flex-col mt-3 md:mt-15">
                     <div>
                         <p className="text-4xl font-extrabold text-gray-900 dark:text-white">Full Stack </p>
                         <p className="text-4xl font-extrabold text-gray-900 dark:text-white">Developer</p>
@@ -79,7 +79,7 @@ export const HeroSection = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-full md:w-1/2 min-h-100 flex justify-center md:justify-start md:pl-5 md:mt-0">
+                <div className="w-full md:w-1/2 h-auto md:min-h-100 flex justify-center md:justify-start md:pl-5 md:mt-0">
                     <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-red-500 relative">
                         <Image src={portimage} alt="profile" className="w-full h-full rounded-full border-2 border-white object-cover" />
                     </div>
